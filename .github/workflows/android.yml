@@ -18,10 +18,13 @@ jobs:
           distribution: temurin
           java-version: "21"
 
+      # Default "packages" installs the obsolete "tools" package, which no longer exists.
       - uses: android-actions/setup-android@v3
+        with:
+          packages: ""
 
       - name: Install Android platform
-        run: sdkmanager "platforms;android-37.0" "build-tools;36.0.0"
+        run: sdkmanager "platforms;android-37.0" "build-tools;36.0.0" "platform-tools"
 
       - uses: gradle/actions/setup-gradle@v4
 
