@@ -1,0 +1,9 @@
+<resources>
+    <style name="Theme.WakeStop" parent="android:Theme.Material.Light.NoActionBar">
+        <item name="android:windowBackground">@android:color/white</item>
+    </style>
+
+    <style name="Theme.WakeStop.Alarm" parent="android:Theme.Material.NoActionBar">
+        <item name="android:windowBackground">@color/alarm_background</item>
+    </style>
+</resources>

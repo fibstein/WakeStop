@@ -30,6 +30,12 @@ android {
 
     buildFeatures {
         compose = true
+        buildConfig = true
+    }
+
+    lint {
+        // Suggestion from a transitive dependency's lint checks; we use android.util.Log on purpose.
+        disable += "LogNotTimber"
     }
 
     testOptions {
@@ -64,4 +70,6 @@ dependencies {
     debugImplementation(libs.androidx.compose.ui.tooling)
 
     testImplementation(libs.junit)
+    // Real org.json for JVM unit tests (android.jar only ships stubs).
+    testImplementation(libs.org.json)
 }
